@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Barbería clásica y moderna. Cortes, degradados y perfilado de barba.">
+  <title>BLACK GOLD | Barbería</title>
+
+  <style>
+    :root {
+      --fondo: #11110f;
+      --panel: #1b1a17;
+      --dorado: #c8a96b;
+      --crema: #f4efe5;
+      --gris: #aaa69e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--fondo);
+      color: var(--crema);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contenedor {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid #333027;
+      background: rgba(17, 17, 15, 0.97);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--dorado);
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.9rem;
+      color: var(--gris);
+    }
+
+    .links a:hover {
+      color: var(--dorado);
+    }
+
+    .boton {
+      display: inline-block;
+      background: var(--dorado);
+      color: #17140e;
+      padding: 13px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .boton:hover {
+      background: #e0c58d;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, #11110f 5%, rgba(17,17,15,.92) 42%, rgba(17,17,15,.30) 100%),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+    }
+
+    .hero-contenido {
+      max-width: 620px;
+      padding: 80px 0;
+    }
+
+    .etiqueta {
+      color: var(--dorado);
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 8vw, 5.4rem);
+      line-height: 1.02;
+      margin: 20px 0;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--dorado);
+    }
+
+    .hero p {
+      color: #d0cbc2;
+      max-width: 470px;
+      margin-bottom: 28px;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .titulo h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 10px 0;
+    }
+
+    .titulo p {
+      color: var(--gris);
+    }
+
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .servicio {
+      background: var(--panel);
+      border: 1px solid #343027;
+      padding: 28px 22px;
+      border-radius: 6px;
+    }
+
+    .numero {
+      color: var(--dorado);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    .servicio h3 {
+      margin: 15px 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .servicio p {
+      color: var(--gris);
+      font-size: 0.92rem;
+      min-height: 48px;
+    }
+
+    .precio {
+      display: block;
+      margin-top: 20px;
+      color: var(--dorado);
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .nosotros {
+      background: #191814;
+    }
+
+    .nosotros-contenido {
+      max-width: 720px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .nosotros p {
+      color: var(--gris);
+      margin: 18px 0 26px;
+    }
+
+    .horarios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .horarios h2 {
+      font-size: 2.4rem;
+      margin: 12px 0;
+    }
+
+    .horarios p {
+      color: var(--gris);
+    }
+
+    .horario-lista {
+      background: var(--panel);
+      padding: 25px;
+      border: 1px solid #343027;
+      border-radius: 6px;
+    }
+
+    .horario-fila {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #343027;
+    }
+
+    .horario-fila:last-child {
+      border-bottom: 0;
+    }
+
+    .horario-fila span:last-child {
+      color: var(--dorado);
+      text-align: right;
+    }
+
+    .contacto {
+      text-align: center;
+      background: #201d16;
+    }
+
+    .contacto p {
+      color: var(--gris);
+      margin: 12px 0 25px;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      color: var(--gris);
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--dorado);
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-wrap: wrap;
+        padding: 18px 0;
+      }
+
+      .links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 0.82rem;
+      }
+
+      .nav-boton {
+        padding: 10px 12px;
+        font-size: 0.82rem;
+      }
+
+      .hero {
+        min-height: 500px;
+        background:
+          linear-gradient(90deg, rgba(17,17,15,.93), rgba(17,17,15,.65)),
+          url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80")
+          center/cover;
+      }
+
+      .hero-contenido {
+        padding: 65px 0;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .servicios {
+        grid-template-columns: 1fr;
+      }
+
+      .servicio p {
+        min-height: auto;
+      }
+
+      .horarios {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="contenedor">
+      <a class="logo" href="#inicio">BLACK <span>GOLD.</span></a>
+
+      <div class="links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#horarios">Horarios</a>
+      </div>
+
+      <a class="boton nav-boton" href="#contacto">Reservar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="contenedor">
+        <div class="hero-contenido">
+          <span class="etiqueta">Estilo · Precisión · Personalidad</span>
+          <h1>Tu estilo.<br>Nuestras <span>reglas.</span></h1>
+          <p>
+            Más que un corte, una experiencia.
+            Descubrí una barbería donde cada detalle importa.
+          </p>
+          <a class="boton" href="#servicios">DESCUBRIR SERVICIOS ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="contenedor">
+        <div class="titulo">
+          <span class="etiqueta">Lo que hacemos</span>
+          <h2>Nuestros servicios</h2>
+          <p>Calidad y atención en cada detalle.</p>
+        </div>
+
+        <div class="servicios">
+          <article class="servicio">
+            <span class="numero">01 / CLÁSICO</span>
+            <h3>Corte tradicional</h3>
+            <p>Un corte limpio y personalizado para tu estilo.</p>
+            <span class="precio">$8.000</span>
+          </article>
+
+          <article class="servicio">
+            <span class="numero">02 / MODERNO</span>
+            <h3>Fade / Degradado</h3>
+            <p>Transiciones precisas y terminaciones prolijas.</p>
+            <span class="precio">$10.000</span>
+          </article>
+
+          <article class="servicio">
+            <span class="numero">03 / DETALLE</span>
+            <h3>Barba y perfilado</h3>
+            <p>Definición de contornos y cuidado de la barba.</p>
+            <span class="precio">$6.000</span>
+          </article>
+        </div>
+        <p style="color:#aaa69e;text-align:center;font-size:.8rem;margin-top:20px">
+          Precios ficticios de demostración. Deben confirmarse con el negocio.
+        </p>
+      </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <div class="contenedor nosotros-contenido">
+        <span class="etiqueta">Nuestra esencia</span>
+        <h2>Tradición con actitud moderna.</h2>
+        <p>
+          Creamos un espacio para que te sientas cómodo,
+          disfrutes el proceso y salgas con un estilo que
+          represente quién sos. Cada cliente merece atención
+          y un resultado cuidado.
+        </p>
+        <a class="boton" href="#contacto">HABLEMOS DE TU PRÓXIMO CORTE</a>
+      </div>
+    </section>
+
+    <section id="horarios">
+      <div class="contenedor horarios">
+        <div>
+          <span class="etiqueta">Te esperamos</span>
+          <h2>Encontrá tu momento.</h2>
+          <p>
+            Consultá los horarios y coordiná tu visita.
+            Esta información es de ejemplo y debe adaptarse
+            a la barbería real.
+          </p>
+        </div>
+
+        <div class="horario-lista">
+          <div class="horario-fila">
+            <span>Lunes a viernes</span>
+            <span>09:00–19:00</span>
+          </div>
+          <div class="horario-fila">
+            <span>Sábados</span>
+            <span>09:00–17:00</span>
+          </div>
+          <div class="horario-fila">
+            <span>Domingos</span>
+            <span>Cerrado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="contenedor">
+        <span class="etiqueta">Tu próximo look empieza acá</span>
+        <h2>¿Listo para renovar tu estilo?</h2>
+        <p>Contactanos para consultar disponibilidad y reservar.</p>
+
+        <!-- Reemplazá el número de ejemplo por el WhatsApp
+             del negocio, con código de país y sin el signo +. -->
+        <a class="boton"
+           href="https://wa.me/5491112345678?text=Hola%2C%20quiero%20consultar%20por%20un%20turno."
+           target="_blank" rel="noopener noreferrer">
+          CONSULTAR POR WHATSAPP ↗
+        </a>
+        <p style="font-size:.8rem;margin-top:15px">
+          Botón de demostración: hay que configurar el número real.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <strong>BLACK GOLD.</strong> · Barbería de demostración<br>
+      © 2026 · Diseño de muestra para portafolio
+    </div>
+  </footer>
+</body>
+</html>
