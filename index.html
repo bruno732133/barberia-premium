@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="ORO NEGRO, barbería. Cortes clásicos y modernos, barba y estilo.">
+  <title>ORO NEGRO | Barbería</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --negro: #101010;
+      --gris: #191919;
+      --dorado: #d8b568;
+      --blanco: #f5f1e8;
+      --texto: #b9b5ac;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--negro);
+      color: var(--blanco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contenedor {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #292929;
+    }
+
+    .navegacion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--dorado);
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .enlaces {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .enlaces a:hover {
+      color: var(--dorado);
+    }
+
+    .portada {
+      min-height: 530px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, #101010 5%, rgba(16,16,16,.88) 50%, rgba(16,16,16,.45)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=85")
+        center / cover;
+    }
+
+    .contenido-portada {
+      padding: 80px 0;
+      max-width: 650px;
+    }
+
+    .etiqueta {
+      color: var(--dorado);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.05;
+      margin: 18px 0;
+      letter-spacing: 2px;
+    }
+
+    h1 span {
+      color: var(--dorado);
+    }
+
+    .descripcion {
+      max-width: 480px;
+      color: #d0ccc3;
+      margin-bottom: 30px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 1px solid var(--dorado);
+      background: var(--dorado);
+      color: #151515;
+      font-weight: bold;
+      border-radius: 3px;
+      transition: .2s;
+    }
+
+    .boton:hover {
+      background: transparent;
+      color: var(--dorado);
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .titulo-seccion {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .subtitulo {
+      text-align: center;
+      color: var(--texto);
+      margin-bottom: 38px;
+    }
+
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .tarjeta {
+      background: var(--gris);
+      padding: 27px 22px;
+      border: 1px solid #303030;
+      border-radius: 5px;
+    }
+
+    .numero {
+      color: var(--dorado);
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .tarjeta h3 {
+      margin: 12px 0 8px;
+      font-size: 20px;
+    }
+
+    .tarjeta p {
+      color: var(--texto);
+      font-size: 14px;
+    }
+
+    .precio {
+      display: block;
+      color: var(--dorado);
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 18px;
+    }
+
+    .nosotros {
+      background: #171717;
+    }
+
+    .nosotros-contenido {
+      max-width: 720px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .nosotros-contenido p {
+      color: var(--texto);
+      margin-top: 18px;
+    }
+
+    .datos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .dato {
+      border-top: 1px solid #393939;
+      padding-top: 18px;
+    }
+
+    .dato strong {
+      color: var(--dorado);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .reserva {
+      text-align: center;
+    }
+
+    .reserva p {
+      color: var(--texto);
+      margin: 12px auto 25px;
+      max-width: 500px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      border-top: 1px solid #292929;
+      color: #8e8a82;
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--dorado);
+    }
+
+    @media (max-width: 600px) {
+      .navegacion {
+        justify-content: center;
+      }
+
+      .enlaces {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .portada {
+        min-height: 480px;
+        background-position: 58% center;
+      }
+
+      .contenido-portada {
+        padding: 65px 0;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .titulo-seccion {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="contenedor navegacion">
+      <a class="logo" href="#inicio">ORO NEGRO</a>
+
+      <nav class="enlaces" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#reservas">Reservas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada" id="inicio">
+      <div class="contenedor contenido-portada">
+        <p class="etiqueta">Estilo · Precisión · Elegancia</p>
+        <h1>EL ARTE DE<br><span>VERSE BIEN.</span></h1>
+        <p class="descripcion">
+          Mucho más que un corte. Encontrá tu estilo en un espacio
+          donde cada detalle importa.
+        </p>
+        <a class="boton" href="#reservas">RESERVAR TURNO</a>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Nuestros servicios</h2>
+        <p class="subtitulo">Calidad y atención en cada detalle.</p>
+
+        <div class="servicios">
+          <article class="tarjeta">
+            <span class="numero">01 / CLÁSICO</span>
+            <h3>Corte de cabello</h3>
+            <p>Cortes clásicos y modernos, adaptados a tu estilo.</p>
+            <span class="precio">Consultar</span>
+          </article>
+
+          <article class="tarjeta">
+            <span class="numero">02 / DETALLE</span>
+            <h3>Arreglo de barba</h3>
+            <p>Perfilado y cuidado para un acabado prolijo.</p>
+            <span class="precio">Consultar</span>
+          </article>
+
+          <article class="tarjeta">
+            <span class="numero">03 / COMPLETO</span>
+            <h3>Corte + barba</h3>
+            <p>Un servicio completo para renovar tu imagen.</p>
+            <span class="precio">Consultar</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <div class="contenedor nosotros-contenido">
+        <p class="etiqueta">Nuestra esencia</p>
+        <h2 class="titulo-seccion">Tu estilo, nuestra pasión.</h2>
+        <p>
+          En ORO NEGRO cuidamos cada detalle para ofrecerte
+          una experiencia cómoda, personalizada y de calidad.
+          Vení a encontrar tu próximo estilo.
+        </p>
+
+        <div class="datos">
+          <div class="dato">
+            <strong>Atención personalizada</strong>
+            <span>Cada cliente tiene su estilo.</span>
+          </div>
+
+          <div class="dato">
+            <strong>Calidad y precisión</strong>
+            <span>Nos importa cada detalle.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reserva" id="reservas">
+      <div class="contenedor">
+        <p class="etiqueta">Tu próximo corte empieza acá</p>
+        <h2 class="titulo-seccion">Reservá tu turno</h2>
+        <p>
+          Escribinos por WhatsApp para consultar horarios,
+          servicios y precios.
+        </p>
+
+        <!-- Reemplazá el número de ejemplo por el WhatsApp real -->
+        <a
+          class="boton"
+          href="https://wa.me/5491112345678"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CONSULTAR POR WHATSAPP
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p><span>ORO NEGRO</span> · Barbería</p>
+      <p>© 2026 · Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+  </html>
+  
